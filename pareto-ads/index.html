@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pareto Ads</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+        <style>
+            .pareto_ads { border: 1px solid #ccc; margin-top: 10px; margin-bottom: 10px; padding: 5px; }
+            .hide_me { display: none; }
+        </style>
+    </head>
+
+    <body>
+
+        <script type="text/javascript">
+            $(function() {
+                var d = new Date();
+                var mins = d.getMinutes();
+	
+                if (mins <= 12) {
+                    $('.pareto_ads_20').show();
+                } else {
+                    $('.pareto_ads_80').show();
+                }
+
+                $('.current_mins').html('Min: ' + mins);
+            });
+
+        </script>
+
+        <h2>Pareto Ads</h2>
+        <p>
+        This is a page that is showing some ads at 20% of the time and other ads 80% of the time. <br/>
+        This is based on the minutes of the current computer. <br/>
+        <br/>
+        The discussion can be found here: <br/>
+        http://www.webdeveloper.com/forum/showthread.php?t=263099
+        </p>
+
+
+        <div class="hide_me pareto_ads pareto_ads_20">
+            This is 20% of the cases - 0-12min
+        </div>
+
+        <div class="hide_me pareto_ads pareto_ads_80">
+            This is 80% of the cases - 13min-59
+        </div>
+
+        <div class="current_mins"></div>
+        <br/>
+        <div>
+            Created by: Svetoslav Marinov (Slavi)
+            <br/><a href="http://orbisius.com" target="_blank">http://orbisius.com</a>
+        </div>
+    </body>
+</html>
+
